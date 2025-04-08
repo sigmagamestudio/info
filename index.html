@@ -69,12 +69,15 @@
     }
 
     .game {
+      display: block;
       background-color: var(--card-bg);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       width: 240px;
       transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
       cursor: pointer;
     }
 
@@ -102,22 +105,6 @@
     .game-content p {
       font-size: 14px;
       line-height: 1.4;
-    }
-
-    .game-content a {
-      display: inline-block;
-      margin-top: 10px;
-      background-color: var(--button-bg);
-      color: white;
-      padding: 8px 12px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-      transition: background-color 0.3s;
-    }
-
-    .game-content a:hover {
-      background-color: var(--button-hover);
     }
 
     footer {
@@ -156,32 +143,29 @@
 
 <div class="game-list">
 
-  <div class="game">
+  <a class="game" href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
     <img src="images/game1.jpg" alt="Симулятор Русского Кота">
     <div class="game-content">
       <h2>Симулятор Русского Кота</h2>
       <p>Медитативная игра, позволяющая взглянуть на мир глазами кота. Исследуйте квартиру и поселок, выполняйте задания и наслаждайтесь реалистичной графикой.</p>
-      <a href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">Играть</a>
     </div>
-  </div>
+  </a>
 
-  <div class="game">
+  <a class="game" href="https://vkplay.ru/play/game/ja_ne_vizhu_snov/" target="_blank">
     <img src="images/game2.jpg" alt="Я не вижу снов">
     <div class="game-content">
       <h2>Я не вижу снов</h2>
       <p>Хоррор визуальная новелла. Вернувшись в родной город, студент сталкивается с жуткими тайнами прошлого и встречает духов славянского фольклора.</p>
-      <a href="https://vkplay.ru/play/game/ja_ne_vizhu_snov/" target="_blank">Играть</a>
     </div>
-  </div>
+  </a>
 
-  <div class="game">
+  <a class="game" href="https://vkplay.ru/play/game/simuljator_russkoj_sobaki/" target="_blank">
     <img src="images/game3.jpg" alt="Симулятор Русской Собаки">
     <div class="game-content">
       <h2>Симулятор Русской Собаки</h2>
       <p>Приключенческая игра от лица овчарки. Исследуйте локации, выполняйте задания и разговаривайте с хозяином через микрофон.</p>
-      <a href="https://vkplay.ru/play/game/simuljator_russkoj_sobaki/" target="_blank">Играть</a>
     </div>
-  </div>
+  </a>
 
 </div>
 
