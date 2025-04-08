@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Игры</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .game-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 20px;
+        }
+        .game {
+            max-width: 800px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .game img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .game-content {
+            padding: 20px;
+        }
+        .game-content h2 {
+            margin-top: 0;
+        }
+        .game-content p {
+            line-height: 1.6;
+        }
+        .game-content a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+        .game-content a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Игры от разработчика</h1>
+</header>
+
+<div class="game-list">
+
+    <div class="game">
+        <img src="images/game1.jpg" alt="Симулятор Русского Кота">
+        <div class="game-content">
+            <h2>Симулятор Русского Кота</h2>
+            <p>Медитативная игра, позволяющая взглянуть на мир глазами кота. Исследуйте квартиру и поселок, выполняйте задания и наслаждайтесь реалистичной графикой.</p>
+            <a href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">Играть на VK Play</a>
+        </div>
+    </div>
+
+    <div class="game">
+        <img src="images/game2.jpg" alt="Я не вижу снов">
+        <div class="game-content">
+            <h2>Я не вижу снов</h2>
+            <p>Хоррор визуальная новелла. Студент возвращается в родной город и сталкивается с жуткими тайнами своего прошлого, знакомится с духами и попадает в пугающие ситуации.</p>
+            <a href="https://vkplay.ru/play/game/ja_ne_vizhu_snov/" target="_blank">Играть на VK Play</a>
+        </div>
+    </div>
+
+    <div class="game">
+        <img src="images/game3.jpg" alt="Симулятор Русской Собаки">
+        <div class="game-content">
+            <h2>Симулятор Русской Собаки</h2>
+            <p>Приключенческая игра от лица немецкой овчарки. Исследуйте локации, взаимодействуйте с окружающим миром и даже общайтесь с хозяином с помощью микрофона!</p>
+            <a href="https://vkplay.ru/play/game/simuljator_russkoj_sobaki/" target="_blank">Играть на VK Play</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
