@@ -127,28 +127,17 @@
     }
 
     .carousel-container {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      max-width: 100%;
+      overflow: hidden;
+      width: 100%;
       margin: 40px auto;
       position: relative;
-      scrollbar-width: none;
-    }
-
-    .carousel-container::-webkit-scrollbar {
-      display: none;
     }
 
     .carousel-track {
       display: flex;
       gap: 20px;
       width: max-content;
-    }
-
-    @media (min-width: 768px) {
-      .carousel-track {
-        animation: scrollReviews 20s linear infinite;
-      }
+      animation: scrollReviews 30s linear infinite;
     }
 
     @keyframes scrollReviews {
@@ -237,7 +226,17 @@
 </div>
 
 <div class="carousel-container">
-  <div class="carousel-track" id="carouselTrack">
+  <div class="carousel-track">
+    <!-- Дублируем отзывы для бесконечной прокрутки -->
+    <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
+    <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
+    <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
+    <div class="review"><strong>nikgavrilov</strong><p>Хорошая игра, со своей прикольной механикой</p></div>
+    <div class="review"><strong>dimaclappy</strong><p>Графика хорошая, геймплей затягивает. Коротковата, а так прикольно.</p></div>
+    <div class="review"><strong>sherstenoklink</strong><p>История короткая, герои нарисованы хорошо. В целом интересно.</p></div>
+    <div class="review"><strong>dimaclappy</strong><p>Задумка неплохая, но собакой сложновато управлять.</p></div>
+
+    <!-- Повтор -->
     <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
     <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
     <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
