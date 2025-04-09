@@ -53,6 +53,7 @@
       padding: 8px 14px;
       border-radius: 6px;
       cursor: pointer;
+      font-size: 18px;
       transition: background-color 0.3s;
     }
 
@@ -69,12 +70,15 @@
     }
 
     .game {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       background-color: var(--card-bg);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       width: 240px;
+      height: 480px;
       transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
       color: inherit;
@@ -88,23 +92,28 @@
 
     .game img {
       width: 240px;
-      height: 300px;
+      height: 240px;
       object-fit: cover;
       display: block;
     }
 
     .game-content {
       padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .game-content h2 {
       margin-top: 0;
+      margin-bottom: 8px;
       font-size: 18px;
     }
 
     .game-content p {
       font-size: 14px;
       line-height: 1.4;
+      flex-grow: 1;
     }
 
     footer {
@@ -138,7 +147,7 @@
 
 <header>
   <h1>Игры от разработчика</h1>
-  <button class="theme-toggle" onclick="toggleTheme()">Тема</button>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
 </header>
 
 <div class="game-list">
@@ -176,16 +185,28 @@
 </footer>
 
 <script>
+  const themeToggleBtn = document.getElementById('themeToggle');
+
+  function setThemeIcon(isDark) {
+    themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+  }
+
   function toggleTheme() {
     const isDark = document.body.classList.toggle('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    setThemeIcon(isDark);
   }
 
   window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+    if (shouldUseDark) {
       document.body.classList.add('dark');
     }
+
+    setThemeIcon(document.body.classList.contains('dark'));
   });
 </script>
 
