@@ -65,18 +65,18 @@
       position: absolute;
       right: 20px;
       top: 20px;
-      background-color: var(--button-bg);
+      background-color: transparent;
       border: none;
       color: white;
       padding: 8px 14px;
       border-radius: 6px;
       cursor: pointer;
       font-size: 18px;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .theme-toggle:hover {
-      background-color: var(--button-hover);
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     .game-list {
@@ -137,7 +137,7 @@
       display: flex;
       gap: 20px;
       width: max-content;
-      animation: scrollReviews 30s linear infinite;
+      animation: scrollReviews 60s linear infinite;
     }
 
     @keyframes scrollReviews {
@@ -227,7 +227,6 @@
 
 <div class="carousel-container">
   <div class="carousel-track">
-    <!-- Дублируем отзывы для бесконечной прокрутки -->
     <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
     <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
     <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
@@ -236,7 +235,7 @@
     <div class="review"><strong>sherstenoklink</strong><p>История короткая, герои нарисованы хорошо. В целом интересно.</p></div>
     <div class="review"><strong>dimaclappy</strong><p>Задумка неплохая, но собакой сложновато управлять.</p></div>
 
-    <!-- Повтор -->
+    <!-- Повтор для бесконечной прокрутки -->
     <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
     <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
     <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
