@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -109,15 +108,15 @@
     }
 
     .carousel-container {
-      position: relative;
       overflow: hidden;
-      max-width: 90%;
+      max-width: 100%;
       margin: 40px auto;
     }
 
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease-in-out;
+      will-change: transform;
       touch-action: pan-y;
     }
 
@@ -131,6 +130,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
       transition: transform 0.3s;
+      flex-shrink: 0;
     }
 
     .review:hover {
@@ -147,26 +147,6 @@
     .review p {
       font-size: 14px;
       line-height: 1.4;
-    }
-
-    .carousel-buttons {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .carousel-btn {
-      background-color: var(--button-bg);
-      border: none;
-      color: white;
-      font-size: 18px;
-      padding: 8px 12px;
-      margin: 0 6px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .carousel-btn:hover {
-      background-color: var(--button-hover);
     }
 
     footer {
@@ -231,10 +211,6 @@
     <div class="review"><strong>sherstenoklink</strong><p>История короткая, герои нарисованы хорошо. В целом интересно.</p></div>
     <div class="review"><strong>dimaclappy</strong><p>Задумка неплохая, но собакой сложновато управлять.</p></div>
   </div>
-  <div class="carousel-buttons">
-    <button class="carousel-btn" onclick="prevSlide()">⬅️</button>
-    <button class="carousel-btn" onclick="nextSlide()">➡️</button>
-  </div>
 </div>
 
 <footer>
@@ -261,29 +237,13 @@
     setThemeIcon(document.body.classList.contains('dark'));
   });
 
-  // Карусель
+  // Бесконечная прокрутка
   const track = document.getElementById('carouselTrack');
-  let currentIndex = 0;
-  function updateSlide() {
-    const offset = -currentIndex * 300;
-    track.style.transform = `translateX(${offset}px)`;
-  }
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % track.children.length;
-    updateSlide();
-  }
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + track.children.length) % track.children.length;
-    updateSlide();
-  }
-  setInterval(nextSlide, 5000);
-  let startX = 0;
-  track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-  track.addEventListener('touchend', e => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextSlide();
-    else if (endX - startX > 50) prevSlide();
-  });
+  setInterval(() => {
+    const first = track.children[0];
+    track.appendChild(first.cloneNode(true));
+    track.removeChild(first);
+  }, 3000);
 </script>
 
 </body>
