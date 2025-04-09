@@ -4,6 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мои Игры</title>
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Инди-игры от Sigma Game Studio: симуляторы, визуальные новеллы, русская атмосфера.">
+  <meta name="keywords" content="инди игры, симулятор кота, визуальная новелла, русские игры, vkplay, sigma game studio">
+  <meta name="author" content="Sigma Game Studio">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Игры от Sigma Game Studio">
+  <meta property="og:description" content="Симуляторы, хорроры и новеллы от независимого разработчика.">
+  <meta property="og:image" content="https://sigmagamestudio.github.io/info/images/game1.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sigmagamestudio.github.io/info/">
+
   <style>
     :root {
       --bg-color: #f9f9f9;
@@ -111,21 +125,12 @@
       overflow: hidden;
       max-width: 100%;
       margin: 40px auto;
+      position: relative;
     }
 
     .carousel-track {
       display: flex;
-      width: max-content;
-      animation: scroll 30s linear infinite;
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
+      animation: scrollReviews 20s linear infinite;
     }
 
     .review {
@@ -175,6 +180,11 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @keyframes scrollReviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 </head>
 <body>
@@ -184,7 +194,6 @@
 </header>
 
 <div class="game-list">
-  <!-- Игры -->
   <a class="game" href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
     <img src="images/game1.jpg" alt="Симулятор Русского Кота">
     <div class="game-content">
@@ -211,17 +220,7 @@
 </div>
 
 <div class="carousel-container">
-  <div class="carousel-track">
-    <!-- Повторённый блок отзывов дважды -->
-    <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
-    <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
-    <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
-    <div class="review"><strong>nikgavrilov</strong><p>Хорошая игра, со своей прикольной механикой</p></div>
-    <div class="review"><strong>dimaclappy</strong><p>Графика хорошая, геймплей затягивает. Коротковата, а так прикольно.</p></div>
-    <div class="review"><strong>sherstenoklink</strong><p>История короткая, герои нарисованы хорошо. В целом интересно.</p></div>
-    <div class="review"><strong>dimaclappy</strong><p>Задумка неплохая, но собакой сложновато управлять.</p></div>
-
-    <!-- Повторяем те же отзывы ещё раз для бесшовной прокрутки -->
+  <div class="carousel-track" id="carouselTrack">
     <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
     <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
     <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
