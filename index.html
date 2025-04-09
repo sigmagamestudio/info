@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мои Игры</title>
 
+  <!-- Google site verification -->
+  <meta name="google-site-verification" content="L351eRw5vdu6d4J4jnpVcqlow79gPhn0x0Oj7LT1tbU" />
+
   <!-- SEO -->
   <meta name="robots" content="index, follow">
   <meta name="description" content="Инди-игры от Sigma Game Studio: симуляторы, визуальные новеллы, русская атмосфера.">
@@ -130,13 +133,18 @@
 
     .carousel-track {
       display: flex;
+      gap: 20px;
       animation: scrollReviews 20s linear infinite;
+    }
+
+    @keyframes scrollReviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .review {
       min-width: 280px;
       max-width: 280px;
-      margin: 0 10px;
       background-color: var(--card-bg);
       border-radius: 12px;
       padding: 20px;
@@ -179,11 +187,6 @@
 
     footer a:hover {
       text-decoration: underline;
-    }
-
-    @keyframes scrollReviews {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
   </style>
 </head>
@@ -255,6 +258,5 @@
     setThemeIcon(document.body.classList.contains('dark'));
   });
 </script>
-
 </body>
 </html>
