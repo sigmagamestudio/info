@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -107,29 +108,33 @@
       line-height: 1.4;
     }
 
-    /* КАРУСЕЛЬ */
-    .carousel {
-      max-width: 700px;
-      margin: 50px auto;
-      text-align: center;
-      padding: 20px;
-      background-color: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .carousel-container {
       position: relative;
+      overflow: hidden;
+      max-width: 90%;
+      margin: 40px auto;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      touch-action: pan-y;
     }
 
     .review {
-      font-size: 16px;
-      line-height: 1.6;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      min-width: 280px;
+      max-width: 280px;
+      margin: 0 10px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
     }
 
-    .review.active {
-      opacity: 1;
-      transform: translateY(0);
+    .review:hover {
+      transform: scale(1.02);
     }
 
     .review strong {
@@ -137,6 +142,31 @@
       margin-bottom: 10px;
       font-size: 14px;
       color: var(--button-bg);
+    }
+
+    .review p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .carousel-buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .carousel-btn {
+      background-color: var(--button-bg);
+      border: none;
+      color: white;
+      font-size: 18px;
+      padding: 8px 12px;
+      margin: 0 6px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .carousel-btn:hover {
+      background-color: var(--button-hover);
     }
 
     footer {
@@ -157,29 +187,20 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    @media (max-width: 768px) {
-      .game-list {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
   </style>
 </head>
 <body>
-
 <header>
   <h1>Игры от разработчика</h1>
   <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
 </header>
 
 <div class="game-list">
-
   <a class="game" href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
     <img src="images/game1.jpg" alt="Симулятор Русского Кота">
     <div class="game-content">
       <h2>Симулятор Русского Кота</h2>
-      <p>Медитативная игра, позволяющая взглянуть на мир глазами кота. Исследуйте квартиру и поселок, выполняйте задания и наслаждайтесь реалистичной графикой.</p>
+      <p>Медитативная игра, позволяющая взглянуть на мир глазами кота.</p>
     </div>
   </a>
 
@@ -187,7 +208,7 @@
     <img src="images/game2.jpg" alt="Я не вижу снов">
     <div class="game-content">
       <h2>Я не вижу снов</h2>
-      <p>Хоррор визуальная новелла. Вернувшись в родной город, студент сталкивается с жуткими тайнами прошлого и встречает духов славянского фольклора.</p>
+      <p>Хоррор визуальная новелла о тайнах прошлого и духах славянского фольклора.</p>
     </div>
   </a>
 
@@ -195,41 +216,24 @@
     <img src="images/game3.jpg" alt="Симулятор Русской Собаки">
     <div class="game-content">
       <h2>Симулятор Русской Собаки</h2>
-      <p>Приключенческая игра от лица овчарки. Исследуйте локации, выполняйте задания и разговаривайте с хозяином через микрофон.</p>
+      <p>Приключение от лица овчарки с микрофоном и заданиями.</p>
     </div>
   </a>
-
 </div>
 
-<!-- Карусель отзывов -->
-<div class="carousel" id="carousel">
-  <div class="review active">
-    <strong>vansterru</strong>
-    Забавная игра) Стрей от русских разрабов :)
+<div class="carousel-container">
+  <div class="carousel-track" id="carouselTrack">
+    <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
+    <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
+    <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
+    <div class="review"><strong>nikgavrilov</strong><p>Хорошая игра, со своей прикольной механикой</p></div>
+    <div class="review"><strong>dimaclappy</strong><p>Графика хорошая, геймплей затягивает. Коротковата, а так прикольно.</p></div>
+    <div class="review"><strong>sherstenoklink</strong><p>История короткая, герои нарисованы хорошо. В целом интересно.</p></div>
+    <div class="review"><strong>dimaclappy</strong><p>Задумка неплохая, но собакой сложновато управлять.</p></div>
   </div>
-  <div class="review">
-    <strong>redjifay</strong>
-    Хорошая игра, мне понравилась довольно забавно.
-  </div>
-  <div class="review">
-    <strong>Настасья Кот</strong>
-    С Нетерпением жду продолжения, это моя любимая игра теперь :)
-  </div>
-  <div class="review">
-    <strong>nikgavrilov</strong>
-    Хорошая игра, со своей прикольной механикой
-  </div>
-  <div class="review">
-    <strong>dimaclappy</strong>
-    Графика хорошая, геймплей затягивает. Коротковата, а так прикольно.
-  </div>
-  <div class="review">
-    <strong>sherstenoklink</strong>
-    История короткая. Герои нарисованы хорошо, фон иногда не совпадает с текстом. Сама история простая, попадаются глупые моменты, но в целом интересная. Заканчивается неожиданно. Буду ждать продолжения. Своих денег стоит.
-  </div>
-  <div class="review">
-    <strong>dimaclappy</strong>
-    Задумка неплохая, но собакой сложнова-то упровлать. версия 0.4 короткая.
+  <div class="carousel-buttons">
+    <button class="carousel-btn" onclick="prevSlide()">⬅️</button>
+    <button class="carousel-btn" onclick="nextSlide()">➡️</button>
   </div>
 </div>
 
@@ -241,37 +245,44 @@
 
 <script>
   const themeToggleBtn = document.getElementById('themeToggle');
-
   function setThemeIcon(isDark) {
     themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
   }
-
   function toggleTheme() {
     const isDark = document.body.classList.toggle('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     setThemeIcon(isDark);
   }
-
   window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-
-    if (shouldUseDark) {
-      document.body.classList.add('dark');
-    }
-
+    if (shouldUseDark) document.body.classList.add('dark');
     setThemeIcon(document.body.classList.contains('dark'));
+  });
 
-    // Карусель отзывов
-    const reviews = document.querySelectorAll('.review');
-    let index = 0;
-
-    setInterval(() => {
-      reviews[index].classList.remove('active');
-      index = (index + 1) % reviews.length;
-      reviews[index].classList.add('active');
-    }, 4000);
+  // Карусель
+  const track = document.getElementById('carouselTrack');
+  let currentIndex = 0;
+  function updateSlide() {
+    const offset = -currentIndex * 300;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % track.children.length;
+    updateSlide();
+  }
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + track.children.length) % track.children.length;
+    updateSlide();
+  }
+  setInterval(nextSlide, 5000);
+  let startX = 0;
+  track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  track.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextSlide();
+    else if (endX - startX > 50) prevSlide();
   });
 </script>
 
