@@ -7,6 +7,8 @@
 
   <!-- Google site verification -->
   <meta name="google-site-verification" content="L351eRw5vdu6d4J4jnpVcqlow79gPhn0x0Oj7LT1tbU" />
+  <!-- Yandex verification -->
+  <meta name="yandex-verification" content="5f0ea6d45f9233a7" />
 
   <!-- SEO -->
   <meta name="robots" content="index, follow">
@@ -125,16 +127,28 @@
     }
 
     .carousel-container {
-      overflow: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       max-width: 100%;
       margin: 40px auto;
       position: relative;
+      scrollbar-width: none;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      display: none;
     }
 
     .carousel-track {
       display: flex;
       gap: 20px;
-      animation: scrollReviews 20s linear infinite;
+      width: max-content;
+    }
+
+    @media (min-width: 768px) {
+      .carousel-track {
+        animation: scrollReviews 20s linear infinite;
+      }
     }
 
     @keyframes scrollReviews {
