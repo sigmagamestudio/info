@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Мои Игры</title>
+  <title>SigmaGameStudio</title>
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://sigmagamestudio.github.io/info/" />
@@ -132,6 +132,42 @@
       line-height: 1.4;
     }
 
+    .about-section {
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .about-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--button-bg);
+    }
+
+    .about-section p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .about-section ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .about-section li {
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     .carousel-container {
       overflow: hidden;
       width: 100%;
@@ -206,7 +242,6 @@
 </header>
 
 <div class="game-list">
-  <!-- Игры -->
   <a class="game" href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
     <img src="images/game1.jpg" alt="Симулятор Русского Кота">
     <div class="game-content">
@@ -232,8 +267,25 @@
   </a>
 </div>
 
+<section class="about-section">
+  <div class="about-container">
+    <h2>О нас</h2>
+    <p><strong>SigmaGameStudio</strong> — это динамично развивающаяся инди-студия, посвятившая себя созданию игр, которые сочетают в себе погружение в культурное наследие с новаторским геймдизайном. Наша миссия — оживлять уникальные истории через игровые вселенные, предлагая игрокам не только развлечение, но и возможность исследовать мир через призму традиций, мифов и повседневной жизни.</p>
+    <p>Вместо следования трендам мы ищем нехоженые тропы: превращаем бытовые сюжеты в магический реализм, а древние мифы — в актуальные притчи. Наша команда работает по принципу <em>«культурного алхимика»</em>: соединяем фольклорные мотивы с современными технологиями.</p>
+    <ul>
+      <li><strong>Риск как правило:</strong> Мы выпускаем только то, во что верим, даже если это симулятор вороны, ворующей блестяшки у дачников. Наш девиз: «Если это не пугает своей новизной — мы делаем недостаточно».</li>
+      <li><strong>Анти-мейнстрим:</strong> Мы избегаем шаблонов массовой культуры. У нас нет «героев-спасателей» или типичных злодеев — вместо этого вы играете за дворового пса, который спасает мир от скуки, или за подростка, который спорит с древним духом о смысле жизни.</li>
+      <li><strong>Атмосфера вместо клише:</strong> Мы заменяем jump-scare психологическим напряжением и символикой.</li>
+      <li><strong>Жанровое разнообразие:</strong> От легких симуляторов до психологического хоррора — мы экспериментируем, чтобы удивлять.</li>
+    </ul>
+    <p><strong>Мы не конкурируем — мы создаем новое пространство.</strong></p>
+    <p>Пока другие студии борются за внимание в жанровых нишах, мы пишем свои правила. Наши игры — это не продукт, а культурный жест: смешной, пугающий, странный, но всегда искренний. Здесь нет «попыток понравиться», только жажда рассказать то, о чем молчали века.</p>
+  </div>
+</section>
+
 <div class="carousel-container">
   <div class="carousel-track">
+    <!-- Отзывы -->
     <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
     <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
     <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
@@ -272,7 +324,6 @@
   window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (!savedTheme) {
-      // Если темы нет в хранилище — установить тёмную по умолчанию
       document.body.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else if (savedTheme === 'dark') {
