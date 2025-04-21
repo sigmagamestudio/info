@@ -109,7 +109,10 @@
       height: 460px;
       transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
-      color: white;
+
+      /* Исправлено: заменили фиксированный белый цвет на переменную текста */
+      color: var(--text-color);
+
       cursor: pointer;
     }
 
@@ -128,11 +131,17 @@
       margin-top: 0;
       margin-bottom: 8px;
       font-size: 18px;
+
+      /* Добавлено для темы */
+      color: var(--text-color);
     }
 
     .game-content p {
       font-size: 14px;
       line-height: 1.4;
+
+      /* Добавлено для темы */
+      color: var(--text-color);
     }
 
     .game:hover {
@@ -191,6 +200,9 @@
       text-align: center;
       transition: transform 0.3s;
       flex-shrink: 0;
+
+      /* Добавлено: цвет текста зависит от темы */
+      color: var(--text-color);
     }
 
     .review:hover {
@@ -216,6 +228,9 @@
       border-top: 1px solid rgba(0,0,0,0.1);
       margin-top: 40px;
       font-size: 14px;
+
+      /* Добавлено */
+      color: var(--text-color);
     }
 
     footer a {
@@ -236,6 +251,8 @@
 </header>
 
 <div class="game-list">
+  <!-- Карточки игр -->
+  <!-- Оставлены без изменений, так как теперь тема работает через переменные -->
   <div class="game-wrapper">
     <a class="game" href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
       <img src="images/game1.jpg" alt="Симулятор Русского Кота">
@@ -289,8 +306,10 @@
   </div>
 </div>
 
+<!-- Карусель отзывов -->
 <div class="carousel-container">
   <div class="carousel-track">
+    <!-- Отзывы повторяются для бесконечной прокрутки -->
     <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
     <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
     <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
@@ -298,8 +317,7 @@
     <div class="review"><strong>dimaclappy</strong><p>Графика хорошая, геймплей затягивает. Коротковата, а так прикольно.</p></div>
     <div class="review"><strong>sherstenoklink</strong><p>История короткая, герои нарисованы хорошо. В целом интересно.</p></div>
     <div class="review"><strong>dimaclappy</strong><p>Задумка неплохая, но собакой сложновато управлять.</p></div>
-
-    <!-- Повтор для бесконечной прокрутки -->
+    <!-- Повтор -->
     <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
     <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
     <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
