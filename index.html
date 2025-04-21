@@ -10,6 +10,7 @@
 
   <!-- Google site verification -->
   <meta name="google-site-verification" content="L351eRw5vdu6d4J4jnpVcqlow79gPhn0x0Oj7LT1tbU" />
+  <!-- Yandex verification -->
   <meta name="yandex-verification" content="5f0ea6d45f9233a7" />
 
   <!-- SEO -->
@@ -92,25 +93,28 @@
       padding: 30px 20px;
     }
 
+    .game-wrapper {
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .game {
       background-color: var(--card-bg);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      width: 240px;
+      width: 100%;
+      height: 460px;
       transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
-      color: inherit;
+      color: white;
       cursor: pointer;
     }
 
-    .game:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
     .game img {
-      width: 240px;
+      width: 100%;
       height: 300px;
       object-fit: cover;
       display: block;
@@ -131,23 +135,31 @@
       line-height: 1.4;
     }
 
+    .game:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .buy-button-container {
+      width: 100%;
+      margin-top: 10px;
+    }
+
     .buy-button {
       display: block;
       width: 100%;
-      text-align: center;
-      background-color: red;
-      color: white;
       padding: 12px;
-      font-weight: bold;
-      font-size: 16px;
-      border: none;
-      border-radius: 0 0 12px 12px;
+      background-color: #e53935;
+      color: white;
+      text-align: center;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
     }
 
     .buy-button:hover {
-      background-color: darkred;
+      background-color: #c62828;
     }
 
     .carousel-container {
@@ -224,48 +236,56 @@
 </header>
 
 <div class="game-list">
-  <div class="game">
-    <a href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
+  <div class="game-wrapper">
+    <a class="game" href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
       <img src="images/game1.jpg" alt="Симулятор Русского Кота">
       <div class="game-content">
         <h2>Симулятор Русского Кота</h2>
         <p>Медитативная игра, позволяющая взглянуть на мир глазами кота.</p>
       </div>
     </a>
-    <a href="#" class="buy-button">Купить</a>
+    <div class="buy-button-container">
+      <a class="buy-button" href="#">Купить</a>
+    </div>
   </div>
 
-  <div class="game">
-    <a href="https://vkplay.ru/play/game/ja_ne_vizhu_snov/" target="_blank">
+  <div class="game-wrapper">
+    <a class="game" href="https://vkplay.ru/play/game/ja_ne_vizhu_snov/" target="_blank">
       <img src="images/game2.jpg" alt="Я не вижу снов">
       <div class="game-content">
         <h2>Я не вижу снов</h2>
         <p>Хоррор визуальная новелла о тайнах прошлого и духах славянского фольклора.</p>
       </div>
     </a>
-    <a href="#" class="buy-button">Купить</a>
+    <div class="buy-button-container">
+      <a class="buy-button" href="#">Купить</a>
+    </div>
   </div>
 
-  <div class="game">
-    <a href="https://vkplay.ru/play/game/simuljator_russkoj_sobaki/" target="_blank">
+  <div class="game-wrapper">
+    <a class="game" href="https://vkplay.ru/play/game/simuljator_russkoj_sobaki/" target="_blank">
       <img src="images/game3.jpg" alt="Симулятор Русской Собаки">
       <div class="game-content">
         <h2>Симулятор Русской Собаки</h2>
         <p>В мире, полном опасностей и вызовов, примите на себя роль настоящей немецкой овчарки - героя в погонах!</p>
       </div>
     </a>
-    <a href="#" class="buy-button">Купить</a>
+    <div class="buy-button-container">
+      <a class="buy-button" href="#">Купить</a>
+    </div>
   </div>
 
-  <div class="game">
-    <a href="https://vkplay.ru/play/game/gost-baster/" target="_blank">
+  <div class="game-wrapper">
+    <a class="game" href="https://vkplay.ru/play/game/gost-baster/" target="_blank">
       <img src="images/game4.jpg" alt="ГОСТ! Бастер">
       <div class="game-content">
         <h2>ГОСТ! Бастер</h2>
         <p>Психологический хоррор, вдохновлённый русской мифологией. Исследуйте локации, изгоняйте нечисть и выживайте.</p>
       </div>
     </a>
-    <a href="https://boosty.to/sigmagamestudio/posts/fd2c1467-74db-435d-81bc-60b0463f71d7?share=post_link" class="buy-button" target="_blank">Купить</a>
+    <div class="buy-button-container">
+      <a class="buy-button" href="https://boosty.to/sigmagamestudio/posts/fd2c1467-74db-435d-81bc-60b0463f71d7?share=post_link" target="_blank">Купить</a>
+    </div>
   </div>
 </div>
 
@@ -279,7 +299,7 @@
     <div class="review"><strong>sherstenoklink</strong><p>История короткая, герои нарисованы хорошо. В целом интересно.</p></div>
     <div class="review"><strong>dimaclappy</strong><p>Задумка неплохая, но собакой сложновато управлять.</p></div>
 
-    <!-- Повтор -->
+    <!-- Повтор для бесконечной прокрутки -->
     <div class="review"><strong>vansterru</strong><p>Забавная игра) Стрей от русских разрабов :)</p></div>
     <div class="review"><strong>redjifay</strong><p>Хорошая игра, мне понравилась довольно забавно.</p></div>
     <div class="review"><strong>Настасья Кот</strong><p>С нетерпением жду продолжения, это моя любимая игра теперь :)</p></div>
