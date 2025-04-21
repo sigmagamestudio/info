@@ -34,16 +34,16 @@
       --bg-color: #f9f9f9;
       --text-color: #000;
       --card-bg: #fff;
-      --button-bg: #4CAF50;
-      --button-hover: #45a049;
+      --button-bg: #e53935; /* Красный */
+      --button-hover: #c62828;
     }
 
     body.dark {
       --bg-color: #121212;
       --text-color: #eee;
       --card-bg: #1e1e1e;
-      --button-bg: #2e7d32;
-      --button-hover: #1b5e20;
+      --button-bg: #ef5350;
+      --button-hover: #e53935;
     }
 
     * {
@@ -132,6 +132,22 @@
       line-height: 1.4;
     }
 
+    .buy-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background-color: var(--button-bg);
+      color: white;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: var(--button-hover);
+    }
+
     .carousel-container {
       overflow: hidden;
       width: 100%;
@@ -206,37 +222,49 @@
 </header>
 
 <div class="game-list">
-  <a class="game" href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
-    <img src="images/game1.jpg" alt="Симулятор Русского Кота">
-    <div class="game-content">
-      <h2>Симулятор Русского Кота</h2>
-      <p>Медитативная игра, позволяющая взглянуть на мир глазами кота.</p>
-    </div>
-  </a>
+  <div class="game">
+    <a href="https://vkplay.ru/play/game/simuljator_russkogo_kota/" target="_blank">
+      <img src="images/game1.jpg" alt="Симулятор Русского Кота">
+      <div class="game-content">
+        <h2>Симулятор Русского Кота</h2>
+        <p>Медитативная игра, позволяющая взглянуть на мир глазами кота.</p>
+        <a class="buy-button" href="#" target="_blank">Купить</a>
+      </div>
+    </a>
+  </div>
 
-  <a class="game" href="https://vkplay.ru/play/game/ja_ne_vizhu_snov/" target="_blank">
-    <img src="images/game2.jpg" alt="Я не вижу снов">
-    <div class="game-content">
-      <h2>Я не вижу снов</h2>
-      <p>Хоррор визуальная новелла о тайнах прошлого и духах славянского фольклора.</p>
-    </div>
-  </a>
+  <div class="game">
+    <a href="https://vkplay.ru/play/game/ja_ne_vizhu_snov/" target="_blank">
+      <img src="images/game2.jpg" alt="Я не вижу снов">
+      <div class="game-content">
+        <h2>Я не вижу снов</h2>
+        <p>Хоррор визуальная новелла о тайнах прошлого и духах славянского фольклора.</p>
+        <a class="buy-button" href="#" target="_blank">Купить</a>
+      </div>
+    </a>
+  </div>
 
-  <a class="game" href="https://vkplay.ru/play/game/simuljator_russkoj_sobaki/" target="_blank">
-    <img src="images/game3.jpg" alt="Симулятор Русской Собаки">
-    <div class="game-content">
-      <h2>Симулятор Русской Собаки</h2>
-      <p>В мире, полном опасностей и вызовов, примите на себя роль настоящей немецкой овчарки - героя в погонах!</p>
-    </div>
-  </a>
+  <div class="game">
+    <a href="https://vkplay.ru/play/game/simuljator_russkoj_sobaki/" target="_blank">
+      <img src="images/game3.jpg" alt="Симулятор Русской Собаки">
+      <div class="game-content">
+        <h2>Симулятор Русской Собаки</h2>
+        <p>В мире, полном опасностей и вызовов, примите на себя роль настоящей немецкой овчарки - героя в погонах!</p>
+        <a class="buy-button" href="#" target="_blank">Купить</a>
+      </div>
+    </a>
+  </div>
 
-  <a class="game" href="https://vkplay.ru/play/game/gost-baster/" target="_blank">
-    <img src="images/game4.jpg" alt="ГОСТ! Бастер">
-    <div class="game-content">
-      <h2>ГОСТ! Бастер</h2>
-      <p>Психологический хоррор, вдохновлённый русской мифологией. Исследуйте локации, изгоняйте нечисть и выживайте.</p>
-    </div>
-  </a>
+  <div class="game">
+    <a href="https://vkplay.ru/play/game/gost-baster/" target="_blank">
+      <img src="images/game4.jpg" alt="ГОСТ! Бастер">
+      <div class="game-content">
+        <h2>ГОСТ! Бастер</h2>
+        <p>Психологический хоррор, вдохновлённый русской мифологией. Исследуйте локации, изгоняйте нечисть и выживайте.</p>
+        <a class="buy-button" href="https://boosty.to/sigmagamestudio/posts/fd2c1467-74db-435d-81bc-60b0463f71d7?share=post_link" target="_blank">Купить</a>
+      </div>
+    </a>
+  </div>
 </div>
 
 <div class="carousel-container">
